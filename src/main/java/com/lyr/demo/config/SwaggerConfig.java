@@ -13,10 +13,11 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @Author: Ekko
- * @Date: 2019-09-02 10:02
- * @Description:
- */
+ * @Author: lyr
+ * @Description: 接口格式化配置
+ * @Date: 2020/03/12 5:28 下午
+ * @Version: 1.0
+ **/
 @Configuration
 @EnableSwaggerBootstrapUI
 @EnableSwagger2
@@ -28,16 +29,16 @@ public class SwaggerConfig {
                 .pathMapping("/")
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.yiautos.microstore"))
+                .apis(RequestHandlerSelectors.basePackage("com.lyr.demo"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("微店小程序")
-                .description("微店小程序接口")
-                .contact(new Contact("huangja", "123", "huangja@itsmycar.cn"))
+                .title("lyr")
+                .description("lyr接口")
+                .contact(new Contact("lyr", "lyrcsjy", "lyr@lyrcsjy.net"))
                 .version("0.0.1")
                 .build(); // 这部分信息其实可以自定义到配置文件中读取
     }
